@@ -1,8 +1,23 @@
 #include <iostream>
-#include <vector>
 using namespace std;
+
+void swap(int &a, int &b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+
 int main() {
-    cout << "Bui Cong Thanh";
-    vector<int> v(1, 2);
-    v.push_back(5);
+    int a[5] = { 2, 1, 3, 99, 87 };
+    for (int i = 0; i < 5; i++) {
+        for (int j = i; j >= 0; j--) {
+            if (a[i] < a[j]) {
+                swap(a[i], a[j]);
+                break;
+            }
+
+        }
+    }
+
+    for (int i = 0; i < 5; i++) cout << a[i] << ' ';
 }
