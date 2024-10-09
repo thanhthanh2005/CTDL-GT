@@ -8,16 +8,16 @@ void swap(int &a, int &b) {
 }
 
 int main() {
-    int a[5] = { 2, 1, 3, 99, 87 };
-    for (int i = 0; i < 5; i++) {
+    int a[] = { 17, 23, 201, 98, 67, 83, 13, 23, 10, 191, 84, 58 };
+    for (int i = 0; i < sizeof(a) / sizeof(int); i++) {
         for (int j = i; j >= 0; j--) {
             if (a[i] < a[j]) {
                 swap(a[i], a[j]);
                 break;
             }
-
         }
+        for (int x : a) cout << x << ' ';
+        cout << endl;
     }
 
-    for (int i = 0; i < 5; i++) cout << a[i] << ' ';
 }
